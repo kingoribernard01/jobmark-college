@@ -71,7 +71,7 @@ const defaultLegalLinks = [
 export const Footer7 = ({
   logo = {
     url: "/",
-    src: "https://www.shadcnblocks.com/images/block/logos/shadcnblockscom-icon.svg", // Using a placeholder, effectively customized in App.tsx
+    src: "https://www.shadcnblocks.com/images/block/logos/shadcnblockscom-icon.svg", 
     alt: "Jobmark College Logo",
     title: "JOBMARK COLLEGE",
   },
@@ -82,7 +82,7 @@ export const Footer7 = ({
   legalLinks = defaultLegalLinks,
 }: Footer7Props) => {
   return (
-    <section className="py-24 bg-slate-50 border-t border-slate-200">
+    <footer className="py-24 bg-slate-50 border-t border-slate-200">
       <div className="container mx-auto px-4">
         <div className="flex w-full flex-col justify-between gap-10 lg:flex-row lg:items-start lg:text-left">
           <div className="flex w-full flex-col justify-between gap-6 lg:items-start">
@@ -140,7 +140,12 @@ export const Footer7 = ({
           </div>
         </div>
         <div className="mt-16 flex flex-col justify-between gap-4 border-t border-slate-200 py-8 text-xs font-medium text-slate-400 md:flex-row md:items-center md:text-left">
-          <p className="order-2 lg:order-1">{copyright}</p>
+          <div className="order-2 lg:order-1 space-y-1">
+            <p>{copyright}</p>
+            <p className="text-[10px] tracking-wider uppercase font-bold text-slate-400">
+              Designed by <a href="https://novus-studios.vercel.app" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-emerald-500 transition-colors">Novus Studios</a>
+            </p>
+          </div>
           <ul className="order-1 flex flex-col gap-2 md:order-2 md:flex-row">
             {legalLinks.map((link, idx) => (
               <li key={idx} className="hover:text-blue-900 transition-colors">
@@ -150,6 +155,6 @@ export const Footer7 = ({
           </ul>
         </div>
       </div>
-    </section>
+    </footer>
   );
 };
